@@ -12,7 +12,18 @@ public class WhileLoops {
      */
     public static String fromHereToThere(int num1, int num2) {
 
-        return ""; // update or remove this line. It is only there so the tests do not show an error.
+        int currentNum = num1;
+        String returnString = "";
+        if (num1 > num2) {
+            return "Invalid input";
+        }
+        else {
+            while (currentNum < num2) {
+                currentNum++;
+                returnString = currentNum + "";
+            }
+            return returnString;
+        }
     }
 
     /**
