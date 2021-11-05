@@ -18,9 +18,9 @@ public class WhileLoops {
             return "Invalid input";
         }
         else {
-            while (currentNum < num2) {
+            while (currentNum <= num2) {
+                returnString += currentNum + " ";
                 currentNum++;
-                returnString = currentNum + "";
             }
             return returnString;
         }
@@ -33,7 +33,19 @@ public class WhileLoops {
      */
     public static String countPosAndNeg() {
 
-        return ""; // update or remove this line. It is only there so the tests do not show an error.
+        int numEntered = 1, positiveNums = 0, negativeNums = 0;
+        Scanner scan = new Scanner(System.in);
+        while (numEntered != 0) {
+            System.out.print("Enter a positive or negative number or 0 to quit: ");
+            numEntered = scan.nextInt();
+            if (numEntered > 0) {
+                positiveNums++;
+            }
+            else if (numEntered < 0) {
+                negativeNums++;
+            }
+        }
+        return "There were " + positiveNums + " positive and " + negativeNums + " negative numbers";
     }
 
     /**
@@ -43,7 +55,13 @@ public class WhileLoops {
      */
     public static String findMinAndMax() {
 
-       return ""; // update or remove this line. It is only there so the tests do not show an error.
+       int max = Integer.MIN_VALUE;
+       int min = Integer.MAX_VALUE;
+       int timesRan;
+       while (timesRan < 5) {
+           System.out.println("Number: ");
+       }
+        return ""; // update or remove this line. It is only there so the tests do not show an error.
     }
 
     /**
