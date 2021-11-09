@@ -9,7 +9,11 @@ public class ForLoops {
      */
     public static String printingHashTags(int num) {
 
-        return ""; // update or remove this line. It is only there so the tests do not show an error.
+        String hashTag = "";
+        for (int timesRan = 0; timesRan < num; timesRan++) {
+            hashTag += "#";
+        }
+        return hashTag;
     }
 
     /**
@@ -22,7 +26,45 @@ public class ForLoops {
      */
     public static String countDown(int num1, int num2) {
 
-        return ""; // update or remove this line. It is only there so the tests do not show an error.
+        String numberString = "";
+        if (num1 >= num2) {
+            for (int number = num1; number >= num2; number--) {
+                numberString += number + " ";
+            }
+        }
+        else {
+            for (int number = num2; number >= num1; number--) {
+                numberString += number + " ";
+            }
+        }
+        return numberString;
+    }
+
+    public static int sumNumbers(int num1, int num2) {
+
+        int sum = 0;
+        if (num1 > num2) {
+            for (int number = num2; number <= num1; number++) {
+                sum += number;
+            }
+        }
+        else if (num1 < num2) {
+            for (int number = num1; number <= num2; number++) {
+                sum += number;
+            }
+        }
+        else {
+            sum = num1 + num2;
+        }
+        return sum;
+    }
+
+    public static int power(int num1, int num2) {
+        int total = 1;
+        for (int currentPower = 0; currentPower < num2; currentPower++) {
+            total *= num1;
+        }
+        return total;
     }
 
 

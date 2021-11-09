@@ -55,13 +55,11 @@ public class WhileLoops {
      */
     public static String findMinAndMax() {
 
-       int max = Integer.MIN_VALUE;
-       int min = Integer.MAX_VALUE;
-       int timesRan;
-       while (timesRan < 5) {
-           System.out.println("Number: ");
-       }
-        return ""; // update or remove this line. It is only there so the tests do not show an error.
+       Scanner scan = new Scanner(System.in);
+       String largestAndSmallest = "";
+       System.out.print("Number: ");
+       int num1 = scan.nextInt();
+       while ()
     }
 
     /**
