@@ -59,7 +59,7 @@ public class WhileLoops {
        String largestAndSmallest = "";
        System.out.print("Number: ");
        int num1 = scan.nextInt();
-       while ()
+       return "";
     }
 
     /**
