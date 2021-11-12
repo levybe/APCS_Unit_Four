@@ -30,7 +30,7 @@ public class NestedLoopsTests {
 
     @Test
     void sidewaysTest() {
-        String expected = "        1\n      2 1\n    3 2 1\n  4 3 2 1\n5 4 3 2 1\n  4 3 2 1\n    3 2 1\n      2 1\n        1\n";
+        String expected = "        1 \n      2 1 \n    3 2 1 \n  4 3 2 1 \n5 4 3 2 1 \n  4 3 2 1 \n    3 2 1 \n      2 1 \n        1 \n";
         String actual = NestedLoops.sideways();
         assertEquals(expected, actual);
     }

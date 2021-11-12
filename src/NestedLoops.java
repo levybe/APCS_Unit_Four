@@ -52,14 +52,24 @@ public class NestedLoops {
 
     public static String sideways () {
         String string = "";
-        for (int row = 1; row <= 5; row++) {
-            for (int spaces = row; spaces <= 4; spaces++) {
-                string += " ";
-            }
-            for (int numbers = 5; numbers >= 1; numbers++) {
-                string += 5 - numbers;
-            }
+        for (int row1 = 1; row1 <= 5; row1++) {
+                for (int space = row1; space <= 4; space++) {
+                    string += "  ";
+                }
+                for (int number = row1; number >= 1; number--) {
+                    string += number + " ";
+                }
+            string += "\n";
         }
-        return "a";
+        for (int row2 = 4; row2 >= 1; row2--) {
+                for (int space = row2; space <= 4; space++) {
+                    string += "  ";
+                }
+                for (int number = row2; number >= 1; number--) {
+                    string += number + " ";
+                }
+                string += "\n";
+        }
+        return string;
     }
 }
