@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Disemvoweling {
-    public static void main (String[] args) {
+    public static void main(String[] args) {
         String str = "";
         Scanner scan = new Scanner(System.in);
         System.out.print("Welcome to the disemvoweling utility. \nEnter your phrase: ");
@@ -10,21 +10,32 @@ public class Disemvoweling {
 
     }
 
-    public static String disemvowel (String str) {
-         boolean aFinished = false, eFinished = false, iFinished = false, oFinished = false, uFinished = false;
-         String disemvoweledString = str;
-        while (!aFinished) {
-            if (str.indexOf("a") == -1) {
-                if (str.indexOf("A") == -1) {
-                    aFinished = true;
+    public static String disemvowel(String str) {
+        String string = str;
+        string = removeLetter(string, "a");
+        string = removeLetter(string, "e");
+        string = removeLetter(string, "i");
+        string = removeLetter(string, "o");
+        string = removeLetter(string, "u");
+        return string + "\nReduced from " + str.length() + " to " + string.length() + " characters. Reduction rate of " + (((str.length() - string.length()) / str.length()) * 100) + "%";
+    }
+
+    public static String removeLetter(String string, String letter) {
+        String finalString = string;
+        String lowercaseLetter = letter.toLowerCase();
+        String uppercaseLetter = letter.toUpperCase();
+        boolean lettersReplaced = false;
+        while (!lettersReplaced) {
+            if (string.indexOf(lowercaseLetter) == -1) {
+                if (string.indexOf(uppercaseLetter) == -1) {
+                    lettersReplaced = true;
+                } else {
+                    finalString = (finalString.substring(0, finalString.indexOf(uppercaseLetter)) + (finalString.substring((finalString.indexOf(uppercaseLetter) + 1))));
                 }
-                else {
-                    disemvoweledString = (str.substring(0, str.indexOf("A")) + (str.substring((str.indexOf("A") + 1))));
-                }
-            }
-            else {
-                disemvoweledString = (str.substring(0, str.indexOf("a")) + (str.substring((str.indexOf("a") + 1))));
+            } else {
+                finalString = (finalString.substring(0, finalString.indexOf(lowercaseLetter)) + (finalString.substring((finalString.indexOf(lowercaseLetter) + 1))));
             }
         }
+        return finalString;
     }
 }
