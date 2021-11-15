@@ -10,6 +10,7 @@ public class Disemvoweling {
 
     }
 
+    // The following method removes all vowels from str and returns the final string, as well as the length decrease and percentage decrease.
     public static String disemvowel(String str) {
         String string = str;
         string = removeLetter(string, "a");
@@ -20,6 +21,7 @@ public class Disemvoweling {
         return string + "\nReduced from " + str.length() + " to " + string.length() + " characters. Reduction rate of " + (((str.length() - string.length()) / str.length()) * 100) + "%";
     }
 
+    // The following method checks string for all instances of letter, whether they be uppercase or lowercase, and removes them.
     public static String removeLetter(String string, String letter) {
         String finalString = string;
         String lowercaseLetter = letter.toLowerCase();
