@@ -12,32 +12,31 @@ public class Disemvoweling {
 
     // The following method removes all vowels from str and returns the final string, as well as the length decrease and percentage decrease.
     public static String disemvowel(String str) {
-        String string = str;
-        string = removeLetter(string, "a");
-        string = removeLetter(string, "e");
-        string = removeLetter(string, "i");
-        string = removeLetter(string, "o");
-        string = removeLetter(string, "u");
-        return string + "\nReduced from " + str.length() + " to " + string.length() + " characters. Reduction rate of " + (((str.length() - string.length()) / str.length()) * 100) + "%";
+        int oldLength = str.length();
+        str = removeLetter(str, "a");
+        str = removeLetter(str, "e");
+        str = removeLetter(str, "i");
+        str = removeLetter(str, "o");
+        str = removeLetter(str, "u");
+        return str + "\nReduced from " + oldLength + " to " + str.length() + " characters. Reduction rate of " + (int) (((double) (oldLength - str.length()) / oldLength) * 100) + "%";
     }
 
     // The following method checks string for all instances of letter, whether they be uppercase or lowercase, and removes them.
-    public static String removeLetter(String string, String letter) {
-        String finalString = string;
+    public static String removeLetter(String str, String letter) {
         String lowercaseLetter = letter.toLowerCase();
         String uppercaseLetter = letter.toUpperCase();
         boolean lettersReplaced = false;
         while (!lettersReplaced) {
-            if (string.indexOf(lowercaseLetter) == -1) {
-                if (string.indexOf(uppercaseLetter) == -1) {
+            if (str.indexOf(lowercaseLetter) == -1) {
+                if (str.indexOf(uppercaseLetter) == -1) {
                     lettersReplaced = true;
                 } else {
-                    finalString = (finalString.substring(0, finalString.indexOf(uppercaseLetter)) + (finalString.substring((finalString.indexOf(uppercaseLetter) + 1))));
+                    str = (str.substring(0, str.indexOf(uppercaseLetter)) + (str.substring((str.indexOf(uppercaseLetter) + 1))));
                 }
             } else {
-                finalString = (finalString.substring(0, finalString.indexOf(lowercaseLetter)) + (finalString.substring((finalString.indexOf(lowercaseLetter) + 1))));
+                str = (str.substring(0, str.indexOf(lowercaseLetter)) + (str.substring((str.indexOf(lowercaseLetter) + 1))));
             }
         }
-        return finalString;
+        return str;
     }
 }
