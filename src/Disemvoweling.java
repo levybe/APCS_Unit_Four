@@ -13,16 +13,16 @@ public class Disemvoweling {
     // The following method removes all vowels from str and returns the final string, as well as the length decrease and percentage decrease.
     public static String disemvowel(String str) {
         int oldLength = str.length();
-        str = removeLetter(str, "a");
-        str = removeLetter(str, "e");
-        str = removeLetter(str, "i");
-        str = removeLetter(str, "o");
-        str = removeLetter(str, "u");
+        str = removeVowel(str, "a");
+        str = removeVowel(str, "e");
+        str = removeVowel(str, "i");
+        str = removeVowel(str, "o");
+        str = removeVowel(str, "u");
         return str + "\nReduced from " + oldLength + " to " + str.length() + " characters. Reduction rate of " + (int) (((double) (oldLength - str.length()) / oldLength) * 100) + "%";
     }
 
     // The following method checks string for all instances of letter, whether they be uppercase or lowercase, and removes them.
-    public static String removeLetter(String str, String letter) {
+    public static String removeVowel(String str, String letter) {
         String lowercaseLetter = letter.toLowerCase();
         String uppercaseLetter = letter.toUpperCase();
         boolean lettersReplaced = false;
@@ -38,5 +38,10 @@ public class Disemvoweling {
             }
         }
         return str;
+    }
+
+    public static String removeRepeatedLetters (String str) {
+
+        return "UNFINISHED";
     }
 }
